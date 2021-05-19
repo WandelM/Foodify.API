@@ -15,5 +15,9 @@ namespace Foodify.Domain.Models
         /// Name of an item
         /// </summary>
         public string Name { get; set; }
+        /// <summary>
+        /// Date of entity creation
+        /// </summary>
+        public DateTime CreateData { get; set; }
     }
 }

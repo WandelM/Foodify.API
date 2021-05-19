@@ -3,7 +3,7 @@
     /// <summary>
     /// Products category repository contract
     /// </summary>
-    interface IProductCategoryRepository: IRepository<ProductCategory>
+    public interface IProductCategoryRepository: IRepository<ProductCategory>
     {
     }
 }

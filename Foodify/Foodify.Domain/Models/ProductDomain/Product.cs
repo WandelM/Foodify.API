@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Foodify.Domain.Models.CategoryDomain;
+using System;
 
 namespace Foodify.Domain.Models.ProductDomain
 {
@@ -10,7 +11,8 @@ namespace Foodify.Domain.Models.ProductDomain
         /// <summary>
         /// Id of category to where product belongs
         /// </summary>
-        public Guid CategoryId { get; set; }
+        public Guid ProductCategoryId { get; set; }
+        public ProductCategory ProductCategory { get; set; }
         /// <summary>
         /// Calories on 100g of product
         /// </summary>

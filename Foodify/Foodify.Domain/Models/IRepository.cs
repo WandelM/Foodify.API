@@ -10,8 +10,8 @@ namespace Foodify.Domain.Models
     /// <typeparam name="TModel">Model used by repository</typeparam>
     public interface IRepository<TModel> where TModel : class
     {
-        Task<ICollection<TModel>> GetAll();
-        Task<TModel> Get(Guid modelId);
+        Task<ICollection<TModel>> GetAllAsync();
+        Task<TModel> GetAsync(Guid modelId);
         void Add(TModel model);
         void Remove(TModel model);
         Task SaveChangesAsync();

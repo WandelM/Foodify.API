@@ -3,11 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30804.86
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Foodify.API", "Foodify.API\Foodify.API.csproj", "{2322C3EC-4A91-4E6B-8C93-BF6CDACFB2A8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Foodify.API", "Foodify.API\Foodify.API.csproj", "{2322C3EC-4A91-4E6B-8C93-BF6CDACFB2A8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Foodify.Domain", "Foodify.Domain\Foodify.Domain.csproj", "{2F8B9CF3-7BE0-4E8E-A06D-DCF527F8C9B9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Foodify.Domain", "Foodify.Domain\Foodify.Domain.csproj", "{2F8B9CF3-7BE0-4E8E-A06D-DCF527F8C9B9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Foodify.Infrastructure", "Foodify.Infrastructure\Foodify.Infrastructure.csproj", "{FF5CFDD7-8BCB-4A11-A512-85FFC4E78472}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Foodify.Infrastructures", "Foodify.Infrastructures\Foodify.Infrastructures.csproj", "{D9D0D28C-3024-4D41-BDD6-8887FFF4A9E9}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -23,10 +23,10 @@ Global
 		{2F8B9CF3-7BE0-4E8E-A06D-DCF527F8C9B9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2F8B9CF3-7BE0-4E8E-A06D-DCF527F8C9B9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2F8B9CF3-7BE0-4E8E-A06D-DCF527F8C9B9}.Release|Any CPU.Build.0 = Release|Any CPU
-		{FF5CFDD7-8BCB-4A11-A512-85FFC4E78472}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{FF5CFDD7-8BCB-4A11-A512-85FFC4E78472}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{FF5CFDD7-8BCB-4A11-A512-85FFC4E78472}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{FF5CFDD7-8BCB-4A11-A512-85FFC4E78472}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D9D0D28C-3024-4D41-BDD6-8887FFF4A9E9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D9D0D28C-3024-4D41-BDD6-8887FFF4A9E9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D9D0D28C-3024-4D41-BDD6-8887FFF4A9E9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D9D0D28C-3024-4D41-BDD6-8887FFF4A9E9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
