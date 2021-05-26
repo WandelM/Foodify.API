@@ -1,4 +1,5 @@
 ﻿using Foodify.API.Dtos;
+using Foodify.API.Filters;
 using Foodify.Domain.Models.CategoryDomain;
 using Mapster;
 using Microsoft.AspNetCore.Mvc;
@@ -12,6 +13,7 @@ namespace Foodify.API.Controllers
     [ApiController]
     [Route("/api/productcategory")]
     [Produces("application/json")]
+    [ApiKeyFilter]
     public class ProductCategoryController : ControllerBase
     {
         private readonly IProductCategoryRepository _productCategoryRepository;

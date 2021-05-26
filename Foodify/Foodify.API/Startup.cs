@@ -11,6 +11,7 @@ using Microsoft.OpenApi.Models;
 using Microsoft.EntityFrameworkCore;
 using FluentValidation.AspNetCore;
 using Foodify.API.Configurations;
+using System;
 
 namespace Foodify.API
 {
@@ -30,6 +31,23 @@ namespace Foodify.API
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "Foodify.API", Version = "v1" });
+                c.AddSecurityDefinition(Constants.ApiKeyHeader, new OpenApiSecurityScheme()
+                {
+                    Type = SecuritySchemeType.ApiKey,
+                    In = ParameterLocation.Header,
+                    Name = Constants.ApiKeyHeader,
+                    Description = "Api global key"
+                });
+                c.AddSecurityRequirement(new OpenApiSecurityRequirement()
+                {
+                    {
+                        new OpenApiSecurityScheme()
+                        {
+                            Reference = new OpenApiReference() { Type = ReferenceType.SecurityScheme, Id = Constants.ApiKeyHeader}
+                        },
+                        Array.Empty<string>()
+                    }
+                });
             });
             services.AddDbContext<FoodifyContext>(options => options.UseSqlServer(Configuration.GetConnectionString("FoodifyDb"), o => o.MigrationsAssembly("Foodify.Infrastructures")));
             services.AddRepositories();
