@@ -50,5 +50,10 @@ namespace Foodify.Infrastructures.Repositories
             if (_context.ChangeTracker.HasChanges())
                 await _context.SaveChangesAsync();
         }
+
+        public void Update(T model)
+        {
+            _dbEntities.Update(model);
+        }
     }
 }

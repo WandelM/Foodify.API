@@ -14,6 +14,7 @@ namespace Foodify.Domain.Models
         Task<TModel> GetAsync(Guid modelId);
         void Add(TModel model);
         void Remove(TModel model);
+        void Update(TModel model);
         Task SaveChangesAsync();
         void SaveChanges();
     }
