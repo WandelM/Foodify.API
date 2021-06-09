@@ -36,7 +36,7 @@ namespace Foodify.API.Controllers
             return Ok(mappedProducts);
         }
 
-        [HttpPost]
+        [HttpGet]
         [Route("{productId}")]
         public async Task<ActionResult<ProductOutput>> Get(Guid productId)
         {
@@ -46,8 +46,49 @@ namespace Foodify.API.Controllers
                 return NotFound();
 
             var mappedProduct = product.Adapt<ProductOutput>();
-            
+
             return Ok(mappedProduct);
+        }
+
+        [HttpPost]
+        public async Task<ActionResult> Create(ProductInput productInput)
+        {
+            if (productInput == null)
+                throw new NullReferenceException(nameof(productInput));
+
+            if (await _productRepository.ExistsAsync(productInput.Name))
+                return BadRequest($"{productInput} already exists.");
+
+            var mappedProduct = productInput.Adapt<Product>();
+
+            _productRepository.Add(mappedProduct);
+            await _productRepository.SaveChangesAsync();
+
+            return NoContent();
+        }
+
+        [HttpPut]
+        public async Task<ActionResult> Update(ProductUpdateInput productUpdate)
+        {
+            var mappedProduct = productUpdate.Adapt<Product>();
+            _productRepository.Update(mappedProduct);
+            await _productRepository.SaveChangesAsync();
+            return NoContent();
+        }
+
+        [HttpDelete]
+        [Route("{productId}")]
+        public async Task<ActionResult> Delete(Guid productId)
+        {
+            var productFromDb = await _productRepository.GetAsync(productId);
+
+            if (productFromDb == null)
+                return NotFound();
+
+            _productRepository.Remove(productFromDb);
+            await _productRepository.SaveChangesAsync();
+
+            return NoContent();
         }
     }
 }
