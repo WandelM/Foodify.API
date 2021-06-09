@@ -1,8 +1,5 @@
 ﻿using Foodify.Domain.Models.CategoryDomain;
 using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace Foodify.Infrastructures.DbContext.EntityConfigurations
 {

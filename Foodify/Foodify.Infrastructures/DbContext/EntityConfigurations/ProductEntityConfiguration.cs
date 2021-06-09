@@ -10,8 +10,8 @@ namespace Foodify.Infrastructures.DbContext.EntityConfigurations
             var productEntity = modelBuilder.Entity<Product>();
             productEntity.HasKey(p => p.Id);
             productEntity.HasIndex(p => p.Name);
-            productEntity.HasOne(p => p.ProductCategory).WithMany(pc => pc.Products).HasForeignKey(p => p.ProductCategoryId);
             productEntity.Property(p => p.Name).HasMaxLength(200).IsRequired();
+            productEntity.HasOne(p => p.ProductCategory).WithMany(pc => pc.Products).HasForeignKey(p => p.ProductCategoryId);
             productEntity.Property(p => p.Calories).IsRequired();
             productEntity.Property(p => p.Protein).IsRequired();
             productEntity.Property(p => p.Carbs).IsRequired();

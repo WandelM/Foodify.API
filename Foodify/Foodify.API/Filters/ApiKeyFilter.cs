@@ -10,18 +10,16 @@ namespace Foodify.API.Filters
     [AttributeUsage(AttributeTargets.Class | AttributeTargets.Method)]
     public class ApiKeyFilter : Attribute, IAsyncActionFilter
     {
-        private const string ApiKeyHeaderName = "x-api-key";
-
         public async Task OnActionExecutionAsync(ActionExecutingContext context, ActionExecutionDelegate next)
         {
-            if (context.HttpContext.Request.Headers.TryGetValue(ApiKeyHeaderName, out var key) == false)
+            if (context.HttpContext.Request.Headers.TryGetValue(Constants.ApiKeyHeader, out var key) == false)
             {
                 context.Result = new UnauthorizedResult();
                 return;
             }
 
             var configuration = context.HttpContext.RequestServices.GetRequiredService<IConfiguration>();
-            var apiKey = configuration.GetValue<string>(ApiKeyHeaderName);
+            var apiKey = configuration.GetValue<string>(Constants.ApiKeyHeader);
 
             if (apiKey.Equals(key) == false)
             {

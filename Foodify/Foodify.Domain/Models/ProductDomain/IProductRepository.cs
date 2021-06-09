@@ -10,5 +10,6 @@ namespace Foodify.Domain.Models.ProductDomain
     public interface IProductRepository:IRepository<Product>
     {
         Task<ICollection<Product>> GetProductsByCategoryAsync(Guid categoryId);
+        Task<bool> ExistsAsync(string productName);
     }
 }

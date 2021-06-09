@@ -15,6 +15,16 @@ namespace Foodify.Infrastructures.Repositories
         {
         }
 
+        public async Task<bool> ExistsAsync(string productName)
+        {
+            var product = await _dbEntities.FirstOrDefaultAsync(p => p.Name.ToLower() == productName.ToLower());
+
+            if (product == null)
+                return false;
+
+            return true;
+        }
+
         public async Task<ICollection<Product>> GetProductsByCategoryAsync(Guid categoryId)
         {
             return await _dbEntities.Include(p => p.ProductCategory)
