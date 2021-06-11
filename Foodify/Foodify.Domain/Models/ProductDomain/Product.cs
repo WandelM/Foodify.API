@@ -1,5 +1,7 @@
 ﻿using Foodify.Domain.Models.CategoryDomain;
+using Foodify.Domain.Models.RecipeDomain;
 using System;
+using System.Collections.Generic;
 
 namespace Foodify.Domain.Models.ProductDomain
 {
@@ -29,5 +31,13 @@ namespace Foodify.Domain.Models.ProductDomain
         /// Fat on 100g of product
         /// </summary>
         public int Fat { get; set; }
+        /// <summary>
+        /// Set of receipes where product exists
+        /// </summary>
+        public ICollection<Recipe> Recipes { get; set; }
+        /// <summary>
+        /// Join table configuration with additional data inside
+        /// </summary>
+        public ICollection<RecipeProducts> RecepieProducts { get; set; }
     }
 }

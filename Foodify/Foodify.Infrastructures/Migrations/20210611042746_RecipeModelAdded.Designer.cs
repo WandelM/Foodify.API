@@ -4,14 +4,16 @@ using Foodify.Infrastructure.DbContexts;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace Foodify.Infrastructures.Migrations
 {
     [DbContext(typeof(FoodifyContext))]
-    partial class FoodifyContextModelSnapshot : ModelSnapshot
+    [Migration("20210611042746_RecipeModelAdded")]
+    partial class RecipeModelAdded
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
